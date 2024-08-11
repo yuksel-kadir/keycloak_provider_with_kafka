@@ -1,0 +1,4 @@
+com\example\kafka\springbootkafka\Producer.class
+com\example\kafka\springbootkafka\TestController.class
+com\example\kafka\springbootkafka\Consumer.class
+com\example\kafka\springbootkafka\SpringbootKafkaApplication.class
