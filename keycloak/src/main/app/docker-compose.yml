@@ -1,0 +1,39 @@
+services:
+  keycloak_demo:
+    image: quay.io/keycloak/keycloak:16.1.0
+    environment:
+      DB_VENDOR: postgres
+      DB_ADDR: postgres_keycloak_demo
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_PASSWORD: keycloak
+    ports:
+      - "8890:8080"
+    volumes:
+      - ./providers:/opt/jboss/keycloak/standalone/deployments
+      - ./script.sh:/script.sh
+    entrypoint: ["/script.sh"]
+    depends_on:
+      postgres_keycloak_demo:
+        condition: service_healthy
+    networks:
+      - keycloak_demo_dev_network
+    
+  postgres_keycloak_demo:
+    image: postgres:13.2
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "5436:5432"
+    networks:
+      - keycloak_demo_dev_network
+volumes:
+  pgdata_keycloak_demo:
+networks:
+  keycloak_demo_dev_network:
+    driver: bridge
+
