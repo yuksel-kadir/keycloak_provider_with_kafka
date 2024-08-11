@@ -1,0 +1,8 @@
+com\app\config\AuditLogTopicConfig.class
+com\app\config\AuditLogProducerConfig.class
+com\app\provider\UserRegistrationProvider.class
+com\app\model\UserDetail.class
+com\app\producer\AuditLogProducer.class
+com\app\util\Constant.class
+com\app\provider\factory\UserRegistrationProviderFactory.class
+com\app\serializer\UserDetailSerializer.class

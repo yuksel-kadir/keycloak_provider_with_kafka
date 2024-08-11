@@ -1,0 +1,8 @@
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\util\Constant.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\config\AuditLogProducerConfig.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\provider\factory\UserRegistrationProviderFactory.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\serializer\UserDetailSerializer.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\model\UserDetail.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\config\AuditLogTopicConfig.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\producer\AuditLogProducer.java
+C:\Users\Lenovo\Desktop\keycloak_provider_with_kafka\keycloak provider\src\main\java\com\app\provider\UserRegistrationProvider.java
