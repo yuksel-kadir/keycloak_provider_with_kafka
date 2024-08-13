@@ -1,12 +1,26 @@
+SPRING_KAFKA_BOOTSTRAP_SERVERS: http://192.168.0.29:9092
+
 spring:
   kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}            # url of kafka cluster
     consumer:
-      bootstrap-servers: 192.168.0.29:9092
-      group-id: group_id
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      custom_consumer_1:
+        bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+        value-deserializer-class: com.example.kafka.springbootkafka.model.entity.UserDetail
+        group-id: group_id_1237
+        topic: first_topic
+        auto-offset-reset: earliest
+      custom_consumer_2:
+        bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+        value-deserializer-class: com.example.kafka.springbootkafka.model.entity.UserDetail
+        group-id: group_id_126
+        topic: keycloak_log
+        auto-offset-reset: earliest
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
