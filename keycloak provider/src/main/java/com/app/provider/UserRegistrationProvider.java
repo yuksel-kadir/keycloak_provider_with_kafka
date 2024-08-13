@@ -79,7 +79,7 @@ public class UserRegistrationProvider implements EventListenerProvider {
             logger.warn("Trying to send kafka message to " + AuditLogTopicConfig.AUDIT_LOG_TOPIC);
 
             producer.send(record);
-            //producer.flush();
+            producer.flush();
         } catch (Exception e) {
             // TODO: Discuss later on - what needs to be done here?
         } finally {
@@ -143,7 +143,8 @@ public class UserRegistrationProvider implements EventListenerProvider {
 
     @Override
     public void close() {
+        logger.info("Closing logging-event-listener provider...");
         producer.flush();
-        producer.close();
+        //producer.close();
     }
 }
